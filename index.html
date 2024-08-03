@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>艦これ遠征シミュレータ</title>
+</head>
+<body>
+    <h1>艦これ遠征シミュレータ</h1>
+    <p>遠征に必要な値を計算するためのやーつ。</p>
+    <p>tabで移動すると入力しやすいかも。</p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>項目</th>
+                <th>1番艦</th>
+                <th>2番艦</th>
+                <th>3番艦</th>
+                <th>4番艦</th>
+                <th>5番艦</th>
+                <th>6番艦</th>
+                <th>合計</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>火力</th>
+                <td>
+                    <input type="text" name="fire_1" id="fire_1" tabindex="1">
+                </td>
+                <td>
+                    <input type="text" name="fire_2" id="fire_2" tabindex="5">
+                </td>
+                <td>
+                    <input type="text" name="fire_3" id="fire_3" tabindex="9">
+                </td>
+                <td>
+                    <input type="text" name="fire_4" id="fire_4" tabindex="13">
+                </td>
+                <td>
+                    <input type="text" name="fire_5" id="fire_5" tabindex="17">
+                </td>
+                <td>
+                    <input type="text" name="fire_6" id="fire_6" tabindex="21">
+                </td>
+                <td>
+                    <input type="text" name="sum_fire" id="sum_fire" tabindex=-1 readonly>
+                </td>
+            </tr>
+            <tr>
+                <!-- nameとid、Anti-Airだからaaって安直だね、そうだね -->
+                <th>対空</th>
+                <td>
+                    <input type="text" name="aa_1" id="aa_1" tabindex="2">
+                </td>
+                <td>
+                    <input type="text" name="aa_2" id="aa_2" tabindex="6">
+                </td>
+                <td>
+                    <input type="text" name="aa_3" id="aa_3" tabindex="10">
+                </td>
+                <td>
+                    <input type="text" name="aa_4" id="aa_4" tabindex="14">
+                </td>
+                <td>
+                    <input type="text" name="aa_5" id="aa_5" tabindex="18">
+                </td>
+                <td>
+                    <input type="text" name="aa_6" id="aa_6" tabindex="22">
+                </td>
+                <td>
+                    <input type="text" name="sum_aa" id="sum_aa" tabindex=-1 readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>対潜</td>
+                <td>
+                    <input type="text" name="as_1" id="as_1" tabindex="3">
+                </td>
+                <td>
+                    <input type="text" name="as_2" id="as_2" tabindex="7">
+                </td>
+                <td>
+                    <input type="text" name="as_3" id="as_3" tabindex="11">
+                </td>
+                <td>
+                    <input type="text" name="as_4" id="as_4" tabindex="15">
+                </td>
+                <td>
+                    <input type="text" name="as_5" id="as_5" tabindex="19">
+                </td>
+                <td>
+                    <input type="text" name="as_6" id="as_6" tabindex="23">
+                </td>
+                <td>
+                    <input type="text" name="sum_as" id="sum_as" tabindex=-1 readonly>
+                </td>
+            </tr>
+            <tr>
+                <th>索敵</th>
+                <td>
+                    <input type="text" name="scout_1" id="scout_1" tabindex="4">
+                </td>
+                <td>
+                    <input type="text" name="scout_2" id="scout_2" tabindex="8">
+                </td>
+                <td>
+                    <input type="text" name="scout_3" id="scout_3" tabindex="12">
+                </td>
+                <td>
+                    <input type="text" name="scout_4" id="scout_4" tabindex="16">
+                </td>
+                <td>
+                    <input type="text" name="scout_5" id="scout_5" tabindex="20">
+                </td>
+                <td>
+                    <input type="text" name="scout_6" id="scout_6" tabindex="24">
+                </td>
+                <td>
+                    <input type="text" name="sum_scout" id="sum_scout" tabindex=-1 readonly>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <hr>
+
+    <details>
+        <summary>更新履歴</summary>
+        <ul>
+            <li>20240803</li>
+            <ul>
+                <li>とりあえずロジックだけ作った超プロトタイプ版</li>
+            </ul>
+        </ul>
+    </details>
+    <details>
+        <summary>更新予定とか</summary>
+        <ul>
+            <li>目標値に到達しているか確認できる機能</li>
+            <li>遠征をプルダウンで選んだら合計値がどれくらい必要か表示してくれる機能</li>
+            <li>デザインどうにかしろ</li>
+        </ul>
+    </details>
+
+    <p>つくったひと：<a href="https://x.com/ginger893" target="_blank">ginger893</a></p>
+
+    <script>
+
+        function sumNodeValues(nodelist){
+            sumval = 0
+            for(let i = 0; i < nodelist.length; i++){
+                val = nodelist[i].value
+                if(!isNaN(val)){
+                    sumval += Number(val)
+                }
+            }
+           return sumval;
+        }
+
+        function sumFires(){
+            document.querySelector("[id='sum_fire']").value = sumNodeValues(fires)
+        }
+
+        function sumAntiAirs(){
+            document.querySelector("[id='sum_aa']").value = sumNodeValues(anti_airs)
+        }
+
+        function sumAntiSubs(){
+            document.querySelector("[id='sum_as']").value = sumNodeValues(anti_subs)
+        }
+
+        function sumScouts(){
+            document.querySelector("[id='sum_scout']").value = sumNodeValues(scouts)
+        }
+
+        // 入力項目ごとにNodeListを取得
+        let fires     = document.querySelectorAll("[id^='fire']")
+        let anti_airs = document.querySelectorAll("[id^='aa']")
+        let anti_subs = document.querySelectorAll("[id^='as']")
+        let scouts    = document.querySelectorAll("[id^='scout']")
+
+        // NodeListの種類ごとにイベントリスナーをはっつける
+        fires.forEach(function(ele){
+            ele.addEventListener('change', sumFires);
+        });
+        anti_airs.forEach(function(ele){
+            ele.addEventListener('change', sumAntiAirs);
+        });
+        anti_subs.forEach(function(ele){
+            ele.addEventListener('change', sumAntiSubs);
+        });
+        scouts.forEach(function(ele){
+            ele.addEventListener('change', sumScouts);
+        });
+
+    </script>
+</body>
+</html>
