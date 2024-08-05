@@ -4,149 +4,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>艦これ遠征計算機</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <body>
-    <h1>艦これ遠征計算機</h1>
-    <p>遠征に必要な値を計算するためのやーつ。</p>
-    <p>tabで移動すると入力しやすいかも。</p>
-    
-    <table>
-        <thead>
-            <tr>
-                <th>項目</th>
-                <th>1番艦</th>
-                <th>2番艦</th>
-                <th>3番艦</th>
-                <th>4番艦</th>
-                <th>5番艦</th>
-                <th>6番艦</th>
-                <th>合計</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th>火力</th>
-                <td>
-                    <input type="text" name="fire_1" id="fire_1" tabindex="1">
-                </td>
-                <td>
-                    <input type="text" name="fire_2" id="fire_2" tabindex="5">
-                </td>
-                <td>
-                    <input type="text" name="fire_3" id="fire_3" tabindex="9">
-                </td>
-                <td>
-                    <input type="text" name="fire_4" id="fire_4" tabindex="13">
-                </td>
-                <td>
-                    <input type="text" name="fire_5" id="fire_5" tabindex="17">
-                </td>
-                <td>
-                    <input type="text" name="fire_6" id="fire_6" tabindex="21">
-                </td>
-                <td>
-                    <input type="text" name="sum_fire" id="sum_fire" tabindex=-1 readonly>
-                </td>
-            </tr>
-            <tr>
-                <!-- nameとid、Anti-Airだからaaって安直だね、そうだね -->
-                <th>対空</th>
-                <td>
-                    <input type="text" name="aa_1" id="aa_1" tabindex="2">
-                </td>
-                <td>
-                    <input type="text" name="aa_2" id="aa_2" tabindex="6">
-                </td>
-                <td>
-                    <input type="text" name="aa_3" id="aa_3" tabindex="10">
-                </td>
-                <td>
-                    <input type="text" name="aa_4" id="aa_4" tabindex="14">
-                </td>
-                <td>
-                    <input type="text" name="aa_5" id="aa_5" tabindex="18">
-                </td>
-                <td>
-                    <input type="text" name="aa_6" id="aa_6" tabindex="22">
-                </td>
-                <td>
-                    <input type="text" name="sum_aa" id="sum_aa" tabindex=-1 readonly>
-                </td>
-            </tr>
-            <tr>
-                <td>対潜</td>
-                <td>
-                    <input type="text" name="as_1" id="as_1" tabindex="3">
-                </td>
-                <td>
-                    <input type="text" name="as_2" id="as_2" tabindex="7">
-                </td>
-                <td>
-                    <input type="text" name="as_3" id="as_3" tabindex="11">
-                </td>
-                <td>
-                    <input type="text" name="as_4" id="as_4" tabindex="15">
-                </td>
-                <td>
-                    <input type="text" name="as_5" id="as_5" tabindex="19">
-                </td>
-                <td>
-                    <input type="text" name="as_6" id="as_6" tabindex="23">
-                </td>
-                <td>
-                    <input type="text" name="sum_as" id="sum_as" tabindex=-1 readonly>
-                </td>
-            </tr>
-            <tr>
-                <th>索敵</th>
-                <td>
-                    <input type="text" name="scout_1" id="scout_1" tabindex="4">
-                </td>
-                <td>
-                    <input type="text" name="scout_2" id="scout_2" tabindex="8">
-                </td>
-                <td>
-                    <input type="text" name="scout_3" id="scout_3" tabindex="12">
-                </td>
-                <td>
-                    <input type="text" name="scout_4" id="scout_4" tabindex="16">
-                </td>
-                <td>
-                    <input type="text" name="scout_5" id="scout_5" tabindex="20">
-                </td>
-                <td>
-                    <input type="text" name="scout_6" id="scout_6" tabindex="24">
-                </td>
-                <td>
-                    <input type="text" name="sum_scout" id="sum_scout" tabindex=-1 readonly>
-                </td>
-            </tr>
+    <div class="container">
+        <h1>艦これ遠征計算機</h1>
+        <p>遠征に必要な値を計算するためのやーつ。</p>
+        <p>tabで移動すると入力しやすいかも。</p>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>項目</th>
+                    <th>1番艦</th>
+                    <th>2番艦</th>
+                    <th>3番艦</th>
+                    <th>4番艦</th>
+                    <th>5番艦</th>
+                    <th>6番艦</th>
+                    <th>合計</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>火力</th>
+                    <td>
+                        <input type="text" name="fire_1" id="fire_1" class="form-control input-sm" tabindex="1">
+                    </td>
+                    <td>
+                        <input type="text" name="fire_2" id="fire_2" class="form-control input-sm" tabindex="5">
+                    </td>
+                    <td>
+                        <input type="text" name="fire_3" id="fire_3" class="form-control input-sm" tabindex="9">
+                    </td>
+                    <td>
+                        <input type="text" name="fire_4" id="fire_4" class="form-control input-sm" tabindex="13">
+                    </td>
+                    <td>
+                        <input type="text" name="fire_5" id="fire_5" class="form-control input-sm" tabindex="17">
+                    </td>
+                    <td>
+                        <input type="text" name="fire_6" id="fire_6" class="form-control input-sm" tabindex="21">
+                    </td>
+                    <td>
+                        <input type="text" name="sum_fire" id="sum_fire" class="form-control input-sm" tabindex=-1 readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <!-- nameとid、Anti-Airだからaaって安直だね、そうだね -->
+                    <th>対空</th>
+                    <td>
+                        <input type="text" name="aa_1" id="aa_1" class="form-control input-sm" tabindex="2">
+                    </td>
+                    <td>
+                        <input type="text" name="aa_2" id="aa_2" class="form-control input-sm" tabindex="6">
+                    </td>
+                    <td>
+                        <input type="text" name="aa_3" id="aa_3" class="form-control input-sm" tabindex="10">
+                    </td>
+                    <td>
+                        <input type="text" name="aa_4" id="aa_4" class="form-control input-sm" tabindex="14">
+                    </td>
+                    <td>
+                        <input type="text" name="aa_5" id="aa_5" class="form-control input-sm" tabindex="18">
+                    </td>
+                    <td>
+                        <input type="text" name="aa_6" id="aa_6" class="form-control input-sm" tabindex="22">
+                    </td>
+                    <td>
+                        <input type="text" name="sum_aa" id="sum_aa" class="form-control input-sm" tabindex=-1 readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>対潜</td>
+                    <td>
+                        <input type="text" name="as_1" id="as_1" class="form-control input-sm" tabindex="3">
+                    </td>
+                    <td>
+                        <input type="text" name="as_2" id="as_2" class="form-control input-sm" tabindex="7">
+                    </td>
+                    <td>
+                        <input type="text" name="as_3" id="as_3" class="form-control input-sm" tabindex="11">
+                    </td>
+                    <td>
+                        <input type="text" name="as_4" id="as_4" class="form-control input-sm" tabindex="15">
+                    </td>
+                    <td>
+                        <input type="text" name="as_5" id="as_5" class="form-control input-sm" tabindex="19">
+                    </td>
+                    <td>
+                        <input type="text" name="as_6" id="as_6" class="form-control input-sm" tabindex="23">
+                    </td>
+                    <td>
+                        <input type="text" name="sum_as" id="sum_as" class="form-control input-sm" tabindex=-1 readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <th>索敵</th>
+                    <td>
+                        <input type="text" name="scout_1" id="scout_1" class="form-control input-sm" tabindex="4">
+                    </td>
+                    <td>
+                        <input type="text" name="scout_2" id="scout_2" class="form-control input-sm" tabindex="8">
+                    </td>
+                    <td>
+                        <input type="text" name="scout_3" id="scout_3" class="form-control input-sm" tabindex="12">
+                    </td>
+                    <td>
+                        <input type="text" name="scout_4" id="scout_4" class="form-control input-sm" tabindex="16">
+                    </td>
+                    <td>
+                        <input type="text" name="scout_5" id="scout_5" class="form-control input-sm" tabindex="20">
+                    </td>
+                    <td>
+                        <input type="text" name="scout_6" id="scout_6" class="form-control input-sm" tabindex="24">
+                    </td>
+                    <td>
+                        <input type="text" name="sum_scout" id="sum_scout" class="form-control input-sm" tabindex=-1 readonly>
+                    </td>
+                </tr>
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
 
-    <hr>
+        <hr>
 
-    <details>
-        <summary>更新履歴</summary>
-        <ul>
-            <li>20240803</li>
+        <details>
+            <summary>更新履歴</summary>
             <ul>
-                <li>とりあえずロジックだけ作った超プロトタイプ版</li>
+                <li>20240803</li>
+                <ul>
+                    <li>とりあえずロジックだけ作った超プロトタイプ版</li>
+                </ul>
             </ul>
-        </ul>
-    </details>
-    <details>
-        <summary>更新予定とか</summary>
-        <ul>
-            <li>目標値に到達しているか確認できる機能</li>
-            <li>遠征をプルダウンで選んだら合計値がどれくらい必要か表示してくれる機能</li>
-            <li>デザインどうにかしろ</li>
-        </ul>
-    </details>
+        </details>
+        <details>
+            <summary>更新予定とか</summary>
+            <ul>
+                <li>目標値に到達しているか確認できる機能</li>
+                <li>遠征をプルダウンで選んだら合計値がどれくらい必要か表示してくれる機能</li>
+                <li>デザインどうにかしろ</li>
+            </ul>
+        </details>
 
-    <p>つくったひと：<a href="https://x.com/ginger893" target="_blank">ginger893</a></p>
+        <p>つくったひと：<a href="https://x.com/ginger893" target="_blank">ginger893</a></p>
+    </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script>
 
         function sumNodeValues(nodelist){
