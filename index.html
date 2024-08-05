@@ -189,6 +189,35 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script>
 
+        function compareTotalAndRequired(cond){
+            console.log('by cond : '+cond)
+            req_target  = document.querySelector(`[id='required_${cond}']`).value
+            if(req_target != "" && !isNaN(req_target)){
+                sum_target_val = document.querySelector(`[id='sum_${cond}']`).value
+                if(Number(req_target) <= sum_target_val){
+                    document.querySelector(`[id='is_ok_${cond}']`).value = "OK"
+                }else{
+                    document.querySelector(`[id='is_ok_${cond}']`).value = "NG"
+                }
+            }
+        }
+
+        function compareTotalAndRequired_fire(){
+            compareTotalAndRequired("fire")
+        }
+        
+        function compareTotalAndRequired_aa(){
+            compareTotalAndRequired("aa")
+        }
+
+        function compareTotalAndRequired_as(){
+            compareTotalAndRequired("as")
+        }
+
+        function compareTotalAndRequired_scout(){
+            compareTotalAndRequired("scout")
+        }
+
         function sumNodeValues(nodelist){
             sumval = 0
             for(let i = 0; i < nodelist.length; i++){
@@ -199,61 +228,6 @@
             }
            return sumval;
         }
-
-        function compareTotalAndRequired_fire(){
-            req_fire  = document.querySelector("[id='required_fire']").value
-            if(req_fire != "" && !isNaN(req_fire)){
-                sum_fire_val = document.querySelector("[id='sum_fire']").value
-                if(Number(req_fire) <= sum_fire_val){
-                    document.querySelector("[id='is_ok_fire']").value = "OK"
-                }else{
-                    document.querySelector("[id='is_ok_fire']").value = "NG"
-                }
-            }
-        }
-        
-        function compareTotalAndRequired_aa(){
-            req_aa = document.querySelector("[id='required_aa']").value
-            if(req_aa != "" && !isNaN(req_aa)){
-                sum_aa_val = document.querySelector("[id='sum_aa']").value
-                if(Number(req_aa) <= sum_aa_val){
-                    document.querySelector("[id='is_ok_aa']").value = "OK"
-                }else{
-                    document.querySelector("[id='is_ok_aa']").value = "NG"
-                }
-            }
-        }
-
-        function compareTotalAndRequired_as(){
-            req_as = document.querySelector("[id='required_as']").value
-            if(req_as != "" && !isNaN(req_as)){
-                sum_as_val = document.querySelector("[id='sum_as']").value
-                if(Number(req_as) <= sum_as_val){
-                    document.querySelector("[id='is_ok_as']").value = "OK"
-                }else{
-                    document.querySelector("[id='is_ok_as']").value = "NG"
-                }
-            }
-        }
-
-        function compareTotalAndRequired_scout(){
-            req_scout = document.querySelector("[id='required_scout']").value
-            if(req_scout != "" && !isNaN(req_scout)){
-                sum_scout_val = document.querySelector("[id='sum_scout']").value
-                if(Number(req_scout) <= sum_scout_val){
-                    document.querySelector("[id='is_ok_scout']").value = "OK"
-                }else{
-                    document.querySelector("[id='is_ok_scout']").value = "NG"
-                }
-            }
-        }
-
-        // if(req_scout != ""){
-        //     console.log("req_scout:" + req_scout)
-        // }
-
-
-            
 
         function sumFires(){
             document.querySelector("[id='sum_fire']").value = sumNodeValues(fires)
