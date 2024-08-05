@@ -11,6 +11,10 @@
         <h1>艦これ遠征計算機</h1>
         <p>遠征に必要な値を計算するためのやーつ。</p>
         <p>tabで移動すると入力しやすいかも。</p>
+
+        <!-- <select name="target_expedition" id="target_expedition" class="form-select">
+            <option selected>必須値を表示したい遠征を選択…</option>
+        </select> -->
         
         <table class="table">
             <thead>
@@ -23,6 +27,8 @@
                     <th>5番艦</th>
                     <th>6番艦</th>
                     <th>合計</th>
+                    <th>判定</th>
+                    <th>必須値</th>
                 </tr>
             </thead>
             <tbody>
@@ -49,6 +55,12 @@
                     <td>
                         <input type="text" name="sum_fire" id="sum_fire" class="form-control input-sm" tabindex=-1 readonly>
                     </td>
+                    <td>
+                        <input type="text" name="is_ok_fire" id="is_ok_fire" class="form-control input-sm" tabindex=-1 readonly>
+                    </td>
+                    <td>
+                        <input type="text" name="required_fire" id="required_fire" class="form-control input-sm" tabindex=-1>
+                    </td>
                 </tr>
                 <tr>
                     <!-- nameとid、Anti-Airだからaaって安直だね、そうだね -->
@@ -74,6 +86,12 @@
                     <td>
                         <input type="text" name="sum_aa" id="sum_aa" class="form-control input-sm" tabindex=-1 readonly>
                     </td>
+                    <td>
+                        <input type="text" name="is_ok_aa" id="is_ok_aa" class="form-control input-sm" tabindex=-1 readonly>
+                    </td>
+                    <td>
+                        <input type="text" name="required_aa" id="required_aa" class="form-control input-sm" tabindex=-1>
+                    </td>
                 </tr>
                 <tr>
                     <td>対潜</td>
@@ -97,6 +115,12 @@
                     </td>
                     <td>
                         <input type="text" name="sum_as" id="sum_as" class="form-control input-sm" tabindex=-1 readonly>
+                    </td>
+                    <td>
+                        <input type="text" name="is_ok_as" id="is_ok_as" class="form-control input-sm" tabindex=-1 readonly>
+                    </td>
+                    <td>
+                        <input type="text" name="required_as" id="required_as" class="form-control input-sm" tabindex=-1>
                     </td>
                 </tr>
                 <tr>
@@ -122,6 +146,12 @@
                     <td>
                         <input type="text" name="sum_scout" id="sum_scout" class="form-control input-sm" tabindex=-1 readonly>
                     </td>
+                    <td>
+                        <input type="text" name="is_ok_scout" id="is_ok_scout" class="form-control input-sm" tabindex=-1 readonly>
+                    </td>
+                    <td>
+                        <input type="text" name="required_scout" id="required_scout" class="form-control input-sm" tabindex=-1>
+                    </td>
                 </tr>
 
             </tbody>
@@ -132,6 +162,12 @@
         <details>
             <summary>更新履歴</summary>
             <ul>
+                <li>20240805</li>
+                <ul>
+                    <li>bootstrapをテーブル部分に導入</li>
+                    <li>判定カラムを追加</li>
+                    <li>必須値カラムを追加</li>
+                </ul>
                 <li>20240803</li>
                 <ul>
                     <li>とりあえずロジックだけ作った超プロトタイプ版</li>
@@ -141,7 +177,7 @@
         <details>
             <summary>更新予定とか</summary>
             <ul>
-                <li>目標値に到達しているか確認できる機能</li>
+                <li><s>目標値に到達しているか確認できる機能</s></li>
                 <li>遠征をプルダウンで選んだら合計値がどれくらい必要か表示してくれる機能</li>
                 <li>デザインどうにかしろ</li>
             </ul>
@@ -164,20 +200,79 @@
            return sumval;
         }
 
+        function compareTotalAndRequired_fire(){
+            req_fire  = document.querySelector("[id='required_fire']").value
+            if(req_fire != "" && !isNaN(req_fire)){
+                sum_fire_val = document.querySelector("[id='sum_fire']").value
+                if(Number(req_fire) <= sum_fire_val){
+                    document.querySelector("[id='is_ok_fire']").value = "OK"
+                }else{
+                    document.querySelector("[id='is_ok_fire']").value = "NG"
+                }
+            }
+        }
+        
+        function compareTotalAndRequired_aa(){
+            req_aa = document.querySelector("[id='required_aa']").value
+            if(req_aa != "" && !isNaN(req_aa)){
+                sum_aa_val = document.querySelector("[id='sum_aa']").value
+                if(Number(req_aa) <= sum_aa_val){
+                    document.querySelector("[id='is_ok_aa']").value = "OK"
+                }else{
+                    document.querySelector("[id='is_ok_aa']").value = "NG"
+                }
+            }
+        }
+
+        function compareTotalAndRequired_as(){
+            req_as = document.querySelector("[id='required_as']").value
+            if(req_as != "" && !isNaN(req_as)){
+                sum_as_val = document.querySelector("[id='sum_as']").value
+                if(Number(req_as) <= sum_as_val){
+                    document.querySelector("[id='is_ok_as']").value = "OK"
+                }else{
+                    document.querySelector("[id='is_ok_as']").value = "NG"
+                }
+            }
+        }
+
+        function compareTotalAndRequired_scout(){
+            req_scout = document.querySelector("[id='required_scout']").value
+            if(req_scout != "" && !isNaN(req_scout)){
+                sum_scout_val = document.querySelector("[id='sum_scout']").value
+                if(Number(req_scout) <= sum_scout_val){
+                    document.querySelector("[id='is_ok_scout']").value = "OK"
+                }else{
+                    document.querySelector("[id='is_ok_scout']").value = "NG"
+                }
+            }
+        }
+
+        // if(req_scout != ""){
+        //     console.log("req_scout:" + req_scout)
+        // }
+
+
+            
+
         function sumFires(){
             document.querySelector("[id='sum_fire']").value = sumNodeValues(fires)
+            compareTotalAndRequired_fire()
         }
 
         function sumAntiAirs(){
             document.querySelector("[id='sum_aa']").value = sumNodeValues(anti_airs)
+            compareTotalAndRequired_aa()
         }
 
         function sumAntiSubs(){
             document.querySelector("[id='sum_as']").value = sumNodeValues(anti_subs)
+            compareTotalAndRequired_as()
         }
 
         function sumScouts(){
             document.querySelector("[id='sum_scout']").value = sumNodeValues(scouts)
+            compareTotalAndRequired_scout()
         }
 
         // 入力項目ごとにNodeListを取得
@@ -199,6 +294,21 @@
         scouts.forEach(function(ele){
             ele.addEventListener('change', sumScouts);
         });
+
+
+
+        // fetch('expedition.json')
+        //  .then(response => response.json())
+        //  .then(data => {
+        //     // console.log('テキストファイルの内容:');
+        //     // console.log(data);
+        //     expedition_json_data = data;
+        //     console.log(expedition_json_data)
+
+        // })
+        // .catch(error => {
+        //     console.error('エラー:', error);
+        // });
 
     </script>
 </body>
