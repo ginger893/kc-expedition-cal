@@ -9,12 +9,15 @@
 <body>
     <div class="container">
         <h1>艦これ遠征計算機</h1>
-        <p>遠征に必要な値を計算するためのやーつ。</p>
-        <p>tabで移動すると入力しやすいかも。</p>
+        <p>
+            遠征に必要な値を計算するためのやーつ。<br>
+            tabで移動すると入力しやすいかも。<br>
+            スマホで利用する場合は横画面推奨。
+        </p>
 
-        <!-- <select name="target_expedition" id="target_expedition" class="form-select">
+        <select name="target_expedition" id="target_expedition" class="form-select" tabindex="1">
             <option selected>必須値を表示したい遠征を選択…</option>
-        </select> -->
+        </select>
         
         <table class="table">
             <thead>
@@ -35,22 +38,22 @@
                 <tr>
                     <th>火力</th>
                     <td>
-                        <input type="text" name="fire_1" id="fire_1" class="form-control input-sm" tabindex="1">
+                        <input type="text" name="fire_1" id="fire_1" class="form-control input-sm" tabindex="2">
                     </td>
                     <td>
-                        <input type="text" name="fire_2" id="fire_2" class="form-control input-sm" tabindex="5">
+                        <input type="text" name="fire_2" id="fire_2" class="form-control input-sm" tabindex="6">
                     </td>
                     <td>
-                        <input type="text" name="fire_3" id="fire_3" class="form-control input-sm" tabindex="9">
+                        <input type="text" name="fire_3" id="fire_3" class="form-control input-sm" tabindex="10">
                     </td>
                     <td>
-                        <input type="text" name="fire_4" id="fire_4" class="form-control input-sm" tabindex="13">
+                        <input type="text" name="fire_4" id="fire_4" class="form-control input-sm" tabindex="14">
                     </td>
                     <td>
-                        <input type="text" name="fire_5" id="fire_5" class="form-control input-sm" tabindex="17">
+                        <input type="text" name="fire_5" id="fire_5" class="form-control input-sm" tabindex="18">
                     </td>
                     <td>
-                        <input type="text" name="fire_6" id="fire_6" class="form-control input-sm" tabindex="21">
+                        <input type="text" name="fire_6" id="fire_6" class="form-control input-sm" tabindex="22">
                     </td>
                     <td>
                         <input type="text" name="sum_fire" id="sum_fire" class="form-control input-sm" tabindex=-1 readonly>
@@ -66,22 +69,22 @@
                     <!-- nameとid、Anti-Airだからaaって安直だね、そうだね -->
                     <th>対空</th>
                     <td>
-                        <input type="text" name="aa_1" id="aa_1" class="form-control input-sm" tabindex="2">
+                        <input type="text" name="aa_1" id="aa_1" class="form-control input-sm" tabindex="3">
                     </td>
                     <td>
-                        <input type="text" name="aa_2" id="aa_2" class="form-control input-sm" tabindex="6">
+                        <input type="text" name="aa_2" id="aa_2" class="form-control input-sm" tabindex="7">
                     </td>
                     <td>
-                        <input type="text" name="aa_3" id="aa_3" class="form-control input-sm" tabindex="10">
+                        <input type="text" name="aa_3" id="aa_3" class="form-control input-sm" tabindex="11">
                     </td>
                     <td>
-                        <input type="text" name="aa_4" id="aa_4" class="form-control input-sm" tabindex="14">
+                        <input type="text" name="aa_4" id="aa_4" class="form-control input-sm" tabindex="15">
                     </td>
                     <td>
-                        <input type="text" name="aa_5" id="aa_5" class="form-control input-sm" tabindex="18">
+                        <input type="text" name="aa_5" id="aa_5" class="form-control input-sm" tabindex="19">
                     </td>
                     <td>
-                        <input type="text" name="aa_6" id="aa_6" class="form-control input-sm" tabindex="22">
+                        <input type="text" name="aa_6" id="aa_6" class="form-control input-sm" tabindex="23">
                     </td>
                     <td>
                         <input type="text" name="sum_aa" id="sum_aa" class="form-control input-sm" tabindex=-1 readonly>
@@ -96,22 +99,22 @@
                 <tr>
                     <td>対潜</td>
                     <td>
-                        <input type="text" name="as_1" id="as_1" class="form-control input-sm" tabindex="3">
+                        <input type="text" name="as_1" id="as_1" class="form-control input-sm" tabindex="4">
                     </td>
                     <td>
-                        <input type="text" name="as_2" id="as_2" class="form-control input-sm" tabindex="7">
+                        <input type="text" name="as_2" id="as_2" class="form-control input-sm" tabindex="8">
                     </td>
                     <td>
-                        <input type="text" name="as_3" id="as_3" class="form-control input-sm" tabindex="11">
+                        <input type="text" name="as_3" id="as_3" class="form-control input-sm" tabindex="12">
                     </td>
                     <td>
-                        <input type="text" name="as_4" id="as_4" class="form-control input-sm" tabindex="15">
+                        <input type="text" name="as_4" id="as_4" class="form-control input-sm" tabindex="16">
                     </td>
                     <td>
-                        <input type="text" name="as_5" id="as_5" class="form-control input-sm" tabindex="19">
+                        <input type="text" name="as_5" id="as_5" class="form-control input-sm" tabindex="20">
                     </td>
                     <td>
-                        <input type="text" name="as_6" id="as_6" class="form-control input-sm" tabindex="23">
+                        <input type="text" name="as_6" id="as_6" class="form-control input-sm" tabindex="24">
                     </td>
                     <td>
                         <input type="text" name="sum_as" id="sum_as" class="form-control input-sm" tabindex=-1 readonly>
@@ -126,22 +129,22 @@
                 <tr>
                     <th>索敵</th>
                     <td>
-                        <input type="text" name="scout_1" id="scout_1" class="form-control input-sm" tabindex="4">
+                        <input type="text" name="scout_1" id="scout_1" class="form-control input-sm" tabindex="5">
                     </td>
                     <td>
-                        <input type="text" name="scout_2" id="scout_2" class="form-control input-sm" tabindex="8">
+                        <input type="text" name="scout_2" id="scout_2" class="form-control input-sm" tabindex="9">
                     </td>
                     <td>
-                        <input type="text" name="scout_3" id="scout_3" class="form-control input-sm" tabindex="12">
+                        <input type="text" name="scout_3" id="scout_3" class="form-control input-sm" tabindex="13">
                     </td>
                     <td>
-                        <input type="text" name="scout_4" id="scout_4" class="form-control input-sm" tabindex="16">
+                        <input type="text" name="scout_4" id="scout_4" class="form-control input-sm" tabindex="17">
                     </td>
                     <td>
-                        <input type="text" name="scout_5" id="scout_5" class="form-control input-sm" tabindex="20">
+                        <input type="text" name="scout_5" id="scout_5" class="form-control input-sm" tabindex="21">
                     </td>
                     <td>
-                        <input type="text" name="scout_6" id="scout_6" class="form-control input-sm" tabindex="24">
+                        <input type="text" name="scout_6" id="scout_6" class="form-control input-sm" tabindex="25">
                     </td>
                     <td>
                         <input type="text" name="sum_scout" id="sum_scout" class="form-control input-sm" tabindex=-1 readonly>
@@ -153,15 +156,45 @@
                         <input type="text" name="required_scout" id="required_scout" class="form-control input-sm" tabindex=-1>
                     </td>
                 </tr>
-
+                <tr>
+                    <th>艦種</th>
+                    <td>
+                        <input type="text" name="fleet1" id="fleet1" class="form-control input-sm" tabindex="-1">
+                    </td>
+                    <td>
+                        <input type="text" name="fleet2" id="fleet2" class="form-control input-sm" tabindex="-1">
+                    </td>
+                    <td>
+                        <input type="text" name="fleet3" id="fleet3" class="form-control input-sm" tabindex="-1">
+                    </td>
+                    <td>
+                        <input type="text" name="fleet4" id="fleet4" class="form-control input-sm" tabindex="-1">
+                    </td>
+                    <td>
+                        <input type="text" name="fleet5" id="fleet5" class="form-control input-sm" tabindex="-1">
+                    </td>
+                    <td>
+                        <input type="text" name="fleet6" id="fleet6" class="form-control input-sm" tabindex="-1">
+                    </td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
             </tbody>
         </table>
 
         <hr>
 
-        <details>
+        <details tabindex="-1">
             <summary>更新履歴</summary>
             <ul>
+                <li>20240812</li>
+                <ul>
+                    <li>遠征を選択するプルダウンを追加</li>
+                    <li>艦種カラムを追加</li>
+                    <li>プルダウンで選択された遠征に対応する必須値と艦種を表示する機能を追加</li>
+                    <li>タブ移動してほしくない要素にtabindex=-1を設定</li>
+                </ul>
                 <li>20240805</li>
                 <ul>
                     <li>bootstrapをテーブル部分に導入</li>
@@ -174,11 +207,11 @@
                 </ul>
             </ul>
         </details>
-        <details>
+        <details tabindex="-1">
             <summary>更新予定とか</summary>
             <ul>
                 <li><s>目標値に到達しているか確認できる機能</s></li>
-                <li>遠征をプルダウンで選んだら合計値がどれくらい必要か表示してくれる機能</li>
+                <li><s>遠征をプルダウンで選んだら合計値がどれくらい必要か表示してくれる機能</s></li>
                 <li>デザインどうにかしろ</li>
             </ul>
         </details>
@@ -190,7 +223,6 @@
     <script>
 
         function compareTotalAndRequired(cond){
-            console.log('by cond : '+cond)
             req_target  = document.querySelector(`[id='required_${cond}']`).value
             if(req_target != "" && !isNaN(req_target)){
                 sum_target_val = document.querySelector(`[id='sum_${cond}']`).value
@@ -269,20 +301,65 @@
             ele.addEventListener('change', sumScouts);
         });
 
+        /* プルダウンで遠征を選択 */
+        // 専用クラス
+        class Expedition {
+            constructor(exp_data){
+                this.id     = exp_data.id
+                this.name   = exp_data.name
+                this.fire   = exp_data.fire
+                this.aa     = exp_data.aa
+                this.as     = exp_data.as
+                this.scout  = exp_data.scout
+                this.f1_lv  = exp_data.f1_lv
+                this.all_lv = exp_data.all_lv
+                this.fleet1 = exp_data.fleet1
+                this.fleet2 = exp_data.fleet2
+                this.fleet3 = exp_data.fleet3
+                this.fleet4 = exp_data.fleet4
+                this.fleet5 = exp_data.fleet5
+                this.fleet6 = exp_data.fleet6
+                this.notice = exp_data.notice
+            }
+        }
 
+        let exp_data = {}
+        const te = document.getElementById("target_expedition")
+        te.addEventListener('change', () => {
+            c_exp = exp_data[te.value];
+            document.getElementById("fleet1").value = c_exp.fleet1
+            document.getElementById("fleet2").value = c_exp.fleet2
+            document.getElementById("fleet3").value = c_exp.fleet3
+            document.getElementById("fleet4").value = c_exp.fleet4
+            document.getElementById("fleet5").value = c_exp.fleet5
+            document.getElementById("fleet6").value = c_exp.fleet6
+            document.getElementById("required_fire").value  = c_exp.fire
+            document.getElementById("required_aa").value    = c_exp.aa
+            document.getElementById("required_as").value    = c_exp.as
+            document.getElementById("required_scout").value = c_exp.scout
+        });
+        
+        // JSONファイルの読み込み
+        const expedition_json_path = "expedition.json";
+        function fetchJSON(callback) {
+            fetch(expedition_json_path)
+                .then(response => response.json())
+                .then(data => callback(data))
+                .catch(error => console.error('Error fetching JSON:', error));
+        }
 
-        // fetch('expedition.json')
-        //  .then(response => response.json())
-        //  .then(data => {
-        //     // console.log('テキストファイルの内容:');
-        //     // console.log(data);
-        //     expedition_json_data = data;
-        //     console.log(expedition_json_data)
+        function json2ExpArray(data) {
+            data.forEach(item => {
+                exp = new Expedition(item);
+                exp_data[exp.id] = exp;
+                const opt = document.createElement("option");
+                opt.value = exp.id;
+                opt.text  = exp.id + ":" + exp.name;
+                te.add(opt)
+            });
+        }
 
-        // })
-        // .catch(error => {
-        //     console.error('エラー:', error);
-        // });
+        fetchJSON(json2ExpArray)
 
     </script>
 </body>
